@@ -1,0 +1,96 @@
+configuration {
+  kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+  kb-row-down: "Down,Control+j";
+  kb-accept-entry: "Control+m,Return,KP_Enter";
+  terminal: "mate-terminal";
+  kb-remove-to-eol: "Control+Shift+e";
+  /*kb-mode-next: "Shift+Right,Control+Tab,Control+l";*/
+  kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
+  kb-remove-char-back: "BackSpace";
+	modi: "drun";
+	font:	"Spleen 6x12 Regular 10";
+  icon-theme: "Papirus";
+	display-drun: "";
+	sidebar-mode: false;
+    drun-display-format: "{name}";
+}
+
+@theme "/dev/null"
+
+* {
+	bg:	#0c0b0d;
+	fg:	#eec885;
+  background: #0c0b0d;
+  input: #0c0b0d;
+
+	background-color:	@bg;
+	text-color:	@fg;
+	input-color: @input;
+	mauve: @background;
+}
+
+
+window {
+    transparency:                   "real";
+    background: rgba(238, 200, 133, 85 %);
+    background-color:               @bg;
+    text-color:                     @fg;
+	border:							2px;
+	border-color:					@background;
+    border-radius:                  0px;
+	width:							450px;
+    location:                       center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt { enabled: false; }
+
+entry {
+	placeholder: " Search ...";
+	expand: true;
+	padding: 5px 2% 5px 2%;
+	background-color: @input;
+    placeholder-color: @fg;
+}
+
+inputbar {
+	children: [ prompt, entry ];
+	background-color: @input;
+	text-color: @fg;
+	expand: false;
+	padding: 8px;
+}
+
+listview {
+	columns: 1;
+	lines: 10;
+	cycle: false;
+	dynamic: true;
+	layout: vertical;
+}
+
+mainbox {
+	children: [ inputbar, listview ];
+	spacing: 2%;
+	padding: 2% 1% 2% 1%;
+}
+
+element {
+	orientation: vertical;
+	border-radius: 0%;
+	padding: 1.5% 0% 1.5% 0%;
+}
+
+element-text {
+	expand: true;
+	vertical-align: 0.5;
+	margin: 0.5% 3% 0% 3%;
+	background-color: inherit;
+  text-color: inherit;
+}
+
+element selected {
+	background-color: @mauve;
+	text-color: @bg;
+}
