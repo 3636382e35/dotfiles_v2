@@ -49,8 +49,8 @@ size = 8
   
 # size = 9.5
 [window]
-  # opacity =  0.95 #default
-  opacity =  0.85
+  opacity =  0.95 #default
+  # opacity =  0.85
  # opacity =  1.0
   decorations = "Full"
 # padding = { x = 20, y = 20 }
